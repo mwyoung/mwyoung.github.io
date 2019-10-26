@@ -1,4 +1,42 @@
 body {
-    margin: 60px auto;
+    margin: 5px auto;
     width: 70%;
+}
+
+/* nav coloring */
+nav ul{
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+    background-color: gray;
+}
+nav ul li{
+    float: left;
+    padding: 1px;
+}
+nav ul li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 10px;
+    text-decoration: none;
+}
+nav ul li a:hover {
+    background-color: black;
+}
+
+/* footer coloring */
+footer ul {
+    position: absolute;
+    bottom: 5px;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+footer ul li{
+    float: left;
+    padding: 1px;
+    text-decoration: none;
 }
