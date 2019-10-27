@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 2019-10
+title: "Programming ATmega328P"
 ---
 
 This is a test post

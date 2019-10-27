@@ -1,4 +1,4 @@
 name: mwyoung
 markdown: kramdown
 
-permalink: /posts/:year-:month
+permalink: /posts/:title

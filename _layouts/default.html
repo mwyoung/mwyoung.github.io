@@ -6,7 +6,7 @@
         <title>{{ page.title }}</title>
         <link rel="stylesheet" type="text/css" href="/css/main.css">
     </head>
-    <body>
+    <body class="site">
         <nav>
             <ul>
                 {% for item in site.data.nav %}
@@ -14,11 +14,11 @@
                 {% endfor %}
             <ul>
         </nav>
-        <div class="container">
+        <div class="site-content">
 
         {{ content }}
 
-        </div><!-- /.container -->
+        </div><!-- /.site-content -->
         <footer>
             <ul>
                 {% for item in site.data.footer %}

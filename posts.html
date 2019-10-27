@@ -2,13 +2,14 @@
 layout: default
 title: Posts
 ---
-<h1>Latest Posts</h1>
-<h5>Not really a blog, mostly random findings</h5>
+<h2>All posts</h2>
+<p>
+A place to keep some notes. Sorted by <b>date updated</b>.
 
 <ul>
     {% for post in site.posts %}
         <li>
-            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+            <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
         </li>
     {% endfor %}
 </ul>

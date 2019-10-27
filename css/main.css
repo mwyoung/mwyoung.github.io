@@ -1,6 +1,19 @@
 body {
-    margin: 5px auto;
+    display: flex;
+    flex-direction:column;
+    min-height: 100vh;
+    margin: auto;
     width: 70%;
+}
+
+.site-content{
+    flex: 1 1 auto;
+}
+
+/* reduce spacing */
+h1, h2, h3, h4, h5, h6{
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 /* nav coloring */
@@ -27,16 +40,16 @@ nav ul li a:hover {
 }
 
 /* footer coloring */
+footer {
+    margin: auto auto 0 auto;
+    overflow: hidden;
+}
 footer ul {
-    position: absolute;
-    bottom: 5px;
     list-style-type: none;
     padding: 0px;
-    margin: 0px;
-    overflow: hidden;
 }
 footer ul li{
     float: left;
-    padding: 1px;
+    padding: 3px;
     text-decoration: none;
 }
