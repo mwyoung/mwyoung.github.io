@@ -7,6 +7,10 @@ build:
 	jekyll build
 	jekyll serve
 
+build-debug:
+	jekyll build --verbose
+	jekyll serve
+
 browser:
 	$(browser) http://localhost:4000
 
