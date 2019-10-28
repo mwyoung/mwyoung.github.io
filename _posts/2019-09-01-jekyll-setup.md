@@ -2,7 +2,7 @@
 layout: post
 title: "Jekyll Setup"
 ---
-
+## Overall Setup
 This Jekyll setup used several guides, including
 [Archwiki - ruby setup](https://wiki.archlinux.org/index.php/Ruby),
 [kbroman - gem testing](https://kbroman.org/simple_site/pages/local_test.html),
@@ -18,8 +18,13 @@ Note: there needs to be enough content for Google to actually crawl the website,
 with taking some time to do so. The sitemap for this website is located
 [here](/sitemap.xml).
 
+### Mobile
 For mobile testing ([responsive design](https://developers.google.com/web/fundamentals/design-and-ux/responsive)), make
 sure the firewall excepts outside calls. Using the information
 [here](https://sashabrava.github.io/2018/making-Jekyll-available-on-local-network.html),
 allowing the rule `sudo ufw allow 4000` allows other people on the network to access the
 page.
+
+### 404
+A good 404 page build guide is available in the [jekyll docs](https://jekyllrb.com/tutorials/custom-404-page/).
+It can be viewed [here]({% link 404.md %}).
