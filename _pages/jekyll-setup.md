@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Jekyll Setup"
-date: 2019-09-01
+date: 2019-10-02
 ---
 ## Overall Setup
 This Jekyll setup used several guides, including
@@ -17,7 +17,7 @@ For Ruby, a local install option was used.
 
 Note: there needs to be enough content for Google to actually crawl the website, along
 with taking some time to do so. The sitemap for this website is located
-[here](/sitemap.xml).
+[here](/sitemap.xml), with an example bash script located here
 
 ### Mobile
 For mobile testing ([responsive
@@ -30,3 +30,6 @@ prevent the webpage from being shared over the local network. The command `sudo 
 ### 404
 A good 404 page build guide is available in the [jekyll docs](https://jekyllrb.com/tutorials/custom-404-page/).
 It can be viewed [here]({% link 404.md %}).
+
+### Other references
+[Hiding pages from page list](https://mycyberuniverse.com/exclude-pages-from-navigation-menu-in-jekyll.html).
