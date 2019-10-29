@@ -1,9 +1,10 @@
 name: mwyoung
 markdown: kramdown
+url: https://mwyoung.github.io
 
-permalink: /posts/:title
+permalin: /posts/:title
 
 collections:
     pages:
         output: true
-        permalink: /resources/:title
+        permalink: /pages/:title

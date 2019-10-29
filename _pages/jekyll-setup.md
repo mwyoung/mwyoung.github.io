@@ -37,9 +37,10 @@ prevent the webpage from being shared over the local network. The command `sudo 
 [here](https://sashabrava.github.io/2018/making-Jekyll-available-on-local-network.html).
 
 ### Webcrawlers
-There needs to be enough content for Google to actually crawl the website, along
-with taking some time to do so. The sitemap for this website is located
-[here](/sitemap.xml), with an example bash script located
+There needs to be enough content for Google to actually crawl the website, along with
+taking some time to do so. The
+[sitemap](https://jekyllrb.com/tutorials/convert-site-to-jekyll/#11-add-a-sitemap) for
+this website is located [here](/sitemap.xml), with an example bash script located
 [here](https://github.com/mwyoung/mwyoung.github.io/blob/master/_code/ping.sh) or shown
 below.
 
