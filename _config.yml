@@ -4,6 +4,6 @@ markdown: kramdown
 permalink: /posts/:title
 
 collections:
-    articles:
+    pages:
         output: true
         permalink: /resources/:title

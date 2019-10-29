@@ -1,6 +1,6 @@
 browser=google-chrome
 
-default: build-browser
+default: build
 
 build: jbuild jserve
 

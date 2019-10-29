@@ -1,6 +1,4 @@
 - name: Home
   link: /
-- name: Posts
-  link: /posts
-- name: Articles
-  link: /articles
+- name: Pages
+  link: /pages
