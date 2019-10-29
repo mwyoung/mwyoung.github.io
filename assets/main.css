@@ -3,12 +3,18 @@ body {
     flex-direction:column;
     min-height: 100vh;
     margin: auto;
-    max-width: 70%;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
     body {
         max-width: 95%;
+    }
+}
+
+@media only screen and (min-width: 801px) {
+    body {
+        /* size for main content, limit by width*/
+        max-width: 45em;
     }
 }
 
@@ -18,8 +24,13 @@ body {
 
 /* reduce spacing */
 h1, h2, h3, h4, h5, h6{
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0;
+    padding: 0;
+}
+p {
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
 }
 
 /* nav coloring */

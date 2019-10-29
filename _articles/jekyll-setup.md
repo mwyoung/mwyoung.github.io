@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Jekyll Setup"
+date: 2019-09-01
 ---
 ## Overall Setup
 This Jekyll setup used several guides, including

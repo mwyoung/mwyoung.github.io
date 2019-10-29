@@ -2,3 +2,8 @@ name: mwyoung
 markdown: kramdown
 
 permalink: /posts/:title
+
+collections:
+    articles:
+        output: true
+        permalink: /resources/:title

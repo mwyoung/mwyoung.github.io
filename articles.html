@@ -1,0 +1,16 @@
+---
+layout: default
+title: Articles
+---
+<h2>All Articles</h2>
+<p>
+A place to keep some notes. Sorted by <b>date updated</b>.
+
+<ul>
+    {% assign sortedArt = site.articles | sort: 'date' | reverse %}
+    {% for art in sortedArt %}
+        <li>
+            <h3><a href="{{ art.url }}">{{ art.title }}</a></h3>
+        </li>
+    {% endfor %}
+</ul>
