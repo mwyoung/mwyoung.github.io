@@ -10,8 +10,8 @@ This website was built using [jekyll]({% link _pages/jekyll-setup.md %}) as it w
 with Github-Pages and is free to use/host. This website also uses posts (as pages) sorted
 by date updated, but is static and does not show the date created.
 
-Some of the projects I have worked on:<br />
-[Weather Station](https://github.com/mwyoung/Weather-Station)<br />
-[Avr Serial Setup](https://github.com/mwyoung/avr-serial-test)<br />
-[PCB Ruler](https://github.com/mwyoung/Adafruit-PCB-Ruler)<br />
-[LED Cube](https://github.com/mwyoung/LED-Cube)<br />
+Some of the projects I have worked on include a [Weather
+Station](https://github.com/mwyoung/Weather-Station), an [Avr Serial
+Setup](https://github.com/mwyoung/avr-serial-test) for programming 328 microcontrollers, a
+[PCB Ruler](https://github.com/mwyoung/Adafruit-PCB-Ruler) for having a physical
+representation for parts, and a [LED Cube](https://github.com/mwyoung/LED-Cube).

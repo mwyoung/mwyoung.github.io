@@ -20,6 +20,9 @@ jserve:
 	jekyll serve
 
 jserve-mobile:
+	@echo "=============="
+	hostname -I
+	@echo "=============="
 	jekyll serve --host 0.0.0.0
 
 #for Ubuntu firewall

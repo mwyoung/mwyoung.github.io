@@ -14,7 +14,7 @@ body {
 @media only screen and (min-width: 801px) {
     body {
         /* size for main content, limit by width*/
-        max-width: 45em;
+        max-width: 50em;
     }
 }
 
