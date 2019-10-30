@@ -9,10 +9,9 @@ This Jekyll setup used several guides, including
 [kbroman - gem installation](https://kbroman.org/simple_site/pages/local_test.html),
 [jmcglone - overall setup](http://jmcglone.com/guides/github-pages/),
 [jekyllrb - post setup](https://jekyllrb.com/docs/step-by-step/08-blogging/),
-[SO - Google Webcrawler](https://stackoverflow.com/questions/10376009/how-send-to-google-ping-after-add-new-post/13989836#13989836),
-[Medium - CSS Footer](https://medium.com/@paynoattn/flexbox-sticky-footer-d19dab50c34),
 for a Ubuntu based machine to test before deploying to Github Pages.
 
+### Ruby Setup
 For Ruby, a local install option was used. In particular, a .gemrc file was created along
 with `$(ruby -e 'puts Gem.user_dir')/bin`. This places all of the gems into a `~/.gem`
 folder.
@@ -27,6 +26,14 @@ github-pages`. System updates may be necessary with `sudo gem update --system`.
 
 A makefile is also included to launch jekyll along with having different methods like a
 debug or mobile mode (using `make`, `make build-debug`, or `make build-mobile`).
+
+### Pages
+This jekyll setup uses a collection titled pages so that there is the advantages of only
+having a folder with titles as file names, and in each file having a date that can be
+changed in order to sort each page. Therefore, this allows the usage of post-like content
+while using pages and allows it to be sortable by date updated in [pages]({{ '/pages/' |
+relative_url }}). This allows no year, month, or day to be shown in the url or file, and
+allows the date to easily be changed.
 
 ### Mobile
 For mobile testing (`make build-mobile` using [responsive
@@ -54,4 +61,7 @@ A good 404 page build guide is available in the [jekyll docs](https://jekyllrb.c
 It can be viewed [here]({% link 404.md %}).
 
 ### Other references
-[Hiding pages from page list](https://mycyberuniverse.com/exclude-pages-from-navigation-menu-in-jekyll.html).
+[SO - Google Webcrawler](https://stackoverflow.com/questions/10376009/how-send-to-google-ping-after-add-new-post/13989836#13989836),
+[Medium - CSS Footer](https://medium.com/@paynoattn/flexbox-sticky-footer-d19dab50c34),
+[Hiding pages from page list](https://mycyberuniverse.com/exclude-pages-from-navigation-menu-in-jekyll.html), and
+[Jekyll tags](https://longqian.me/2017/02/09/github-jekyll-tag/).

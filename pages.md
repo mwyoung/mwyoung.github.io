@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Pages
+permalink: /pages/
 ---
 <h2>All Pages</h2>
 <p>

@@ -3,8 +3,8 @@ layout: default
 title: Home
 ---
 <br>
-This is a personal website for sharing [projects]({% link pages.html %}) and providing a
-source to remember where to find information.
+This is a personal website for sharing [projects]({{ '/pages/' | relative_url }}) and
+providing a source to remember where to find information.
 
 This website was built using [jekyll]({% link _pages/jekyll-setup.md %}) as it works well
 with Github-Pages and is free to use/host. This website also uses posts (as pages) sorted
