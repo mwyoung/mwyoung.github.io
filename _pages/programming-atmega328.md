@@ -3,7 +3,6 @@ layout: post
 title: "Programming ATmega328P"
 date: 2019-10-05
 ---
-<br>
 Note: code for this project is available
 [here](https://github.com/mwyoung/avr-serial-test).
 

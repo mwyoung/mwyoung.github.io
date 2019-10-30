@@ -35,6 +35,18 @@ while using pages and allows it to be sortable by date updated in [pages]({{ '/p
 relative_url }}). This allows no year, month, or day to be shown in the url or file, and
 allows the date to easily be changed.
 
+### Including code
+Using markdown and a `_includes/` folder allows the use of embedding code from a file
+that can be updated. An example of this is used in this webpage as the .gemrc and in the
+bash script below in webcrawlers.
+
+An example of this in markdown code would be:
+
+\#\#\#\# \*\*\`file.ext\`\*\*<br>
+\`\`\`file ext, optional<br>
+\{\% include file.ext \%\}<br>
+\`\`\`
+
 ### Mobile
 For mobile testing (`make build-mobile` using [responsive
 design](https://developers.google.com/web/fundamentals/design-and-ux/responsive)) make
