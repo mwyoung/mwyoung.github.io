@@ -40,12 +40,54 @@ Using markdown and a `_includes/` folder allows the use of embedding code from a
 that can be updated. An example of this is used in this webpage as the .gemrc and in the
 bash script below in webcrawlers.
 
-An example of this in markdown code would be:
+There are two ways for showing code. One allows both markdown and html, the other uses
+only [html](https://caniuse.com/#feat=details) but can hide the code.
 
-\#\#\#\# \*\*\`file.ext\`\*\*<br>
-\`\`\`file ext, optional<br>
-\{\% include file.ext \%\}<br>
-\`\`\`
+<table>
+    <tr>
+        <th>markdown/html</th>
+        <th>html only</th>
+    </tr>
+    <tr>
+        <td>
+#### **`file.ext`**<br>
+```file ext, optional<br>
+{% raw %}{% include file.ext %}{% endraw %} <br>
+```
+        </td>
+        <td>
+&lt;details&gt;<br>
+&lt;summary&gt;file.ext&lt;/summary&gt;<br>
+{% raw %}
+{% highlight shell%}<br>
+{% include file.ext %}<br>
+{% endhighlight %}<br>
+{% endraw %}
+&lt;/details&gt;
+        </td>
+    </tr>
+    <tr>
+        <td>
+<h4><b><code>example</code></b></h4>
+<code>
+Code here
+</code>
+        </td>
+        <td>
+<details>
+<summary>example</summary>
+<code>
+Code here
+</code>
+</details>
+        </td>
+    </tr>
+</table>
+
+
+Note: In jekyll, each symbol is commented out with \, and the jekyll syntax is commented
+with [raw and
+endraw](https://stackoverflow.com/questions/20568396/how-to-use-jekyll-code-in-inline-code-highlighting).
 
 ### Mobile
 For mobile testing (`make build-mobile` using [responsive
@@ -75,5 +117,6 @@ It can be viewed [here]({% link 404.md %}).
 ### Other references
 [SO - Google Webcrawler](https://stackoverflow.com/questions/10376009/how-send-to-google-ping-after-add-new-post/13989836#13989836),
 [Medium - CSS Footer](https://medium.com/@paynoattn/flexbox-sticky-footer-d19dab50c34),
-[Hiding pages from page list](https://mycyberuniverse.com/exclude-pages-from-navigation-menu-in-jekyll.html), and
+[Hiding pages from page list](https://mycyberuniverse.com/exclude-pages-from-navigation-menu-in-jekyll.html),
+[Quackit - details tag](https://www.quackit.com/html_5/tags/html_details_tag.cfm), and
 [Jekyll tags](https://longqian.me/2017/02/09/github-jekyll-tag/).

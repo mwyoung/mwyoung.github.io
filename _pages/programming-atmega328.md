@@ -59,6 +59,14 @@ Available commands include `make program` (compile and program), `make compile` 
 only) `make size`, `make asm` (for assembly code). Both the compile and program also will
 warn of errors when compiling.
 
+<details>
+<summary>makefile</summary>
+{% highlight shell%}
+{% include makefile %}
+{% endhighlight %}
+</details>
+<h6>&nbsp;</h6>
+
 ### Serial Monitor
 For Linux based systems, the application
 [moserial](https://wiki.gnome.org/action/show/Apps/Moserial) can be used. This allows
