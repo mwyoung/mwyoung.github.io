@@ -25,12 +25,15 @@ jserve-mobile:
 	@echo "=============="
 	jekyll serve --host 0.0.0.0
 
-#for Ubuntu firewall
-jserve-mobile-enable:
+#for ufw firewall - needs sudo
+firewall-allow:
 	ufw allow 4000
 
-jserve-mobile-disable:
+firewall-disallow:
 	ufw delete allow 4000
+
+firewall-status:
+	ufw status
 
 browser:
 	$(browser) http://localhost:4000

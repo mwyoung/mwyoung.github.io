@@ -3,10 +3,11 @@ layout: post
 title: "Dotfiles - bash/vim"
 date: 2019-01-01
 ---
+Some dotfiles can be found [here](https://github.com/mwyoung/Dotfiles).
 
 There are many ways to configure bash/vim setups, but it should not be done not knowing
 what commands are being set (so don't do it blindly, consult a [man
-page](https://linux.die.net/man/)). Some dotfiles can be found [here](https://github.com/mwyoung/Dotfiles).
+page](https://linux.die.net/man/)).
 
 ### Bash
 One easy way to have a custom [bash
@@ -29,7 +30,7 @@ use. The [.vimrc file](https://github.com/mwyoung/Dotfiles/blob/master/.vimrc) b
 contains the current options that can be used, along with comments about what each line
 does.
 
-One way to extend vim is with [pluggins](https://github.com/junegunn/vim-plug), along with
+One way to extend vim is with [plugins](https://github.com/junegunn/vim-plug), along with
 using [vim fugitive](https://github.com/tpope/vim-fugitive) for git and [vim
 airline](https://github.com/vim-airline/vim-airline) for making vim look better.
 
@@ -50,13 +51,30 @@ suggestions.
 </details>
 <h6>&nbsp;</h6>
 
-### Misc
-Some miscellaneous tools:
-
-* Rsync
+### Miscellaneous
+#### Rsync
 When syncing between two machines, rsync can be nice as it can include/exclude files from
 a file, and only copy changed files.
+<details>
+<summary><a href="https://github.com/mwyoung/Dotfiles/blob/master/copy.sh">copy.sh</a>
+</summary>
+{% highlight shell%}
+{% include copy.sh %}
+{% endhighlight %}
+</details>
+<details>
+<summary>include/exclude</summary>
+<h4><b>copy_include</b></h4>
+{% highlight shell%}
+{% include copy_include %}
+{% endhighlight %}
+<h4><b>copy_exclude</b></h4>
+{% highlight shell%}
+{% include copy_exclude %}
+{% endhighlight %}
+</details>
+<h6>&nbsp;</h6>
 
-* Git
+#### Git
 Git is a pretty good source control manager, and can be used locally (without GitHub) if
 necessary.

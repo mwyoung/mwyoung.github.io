@@ -24,6 +24,10 @@ The only gem needed for jekyll is `github-pages`, which can be installed with `g
 github-pages`. Updates can be checked with `gem outdated` and updated with `gem update
 github-pages`. System updates may be necessary with `sudo gem update --system`.
 
+Ruby should also be updated with `gem update`. If one gem fails to install (an error could
+be *failed to build gem native extension*), this then could be solved by manually
+installing the gem that failed (like *etc*).
+
 A makefile is also included to launch jekyll along with having different methods like a
 debug or mobile mode (using `make`, `make build-debug`, or `make build-mobile`).
 
@@ -50,16 +54,16 @@ only [html](https://caniuse.com/#feat=details) but can hide the code.
     </tr>
     <tr>
         <td>
-#### **`file.ext`**<br>
-```file ext, optional<br>
+#### **`example`**<br>
+```<i>code type</i><br>
 {% raw %}{% include file.ext %}{% endraw %} <br>
 ```
         </td>
         <td>
 &lt;details&gt;<br>
-&lt;summary&gt;file.ext&lt;/summary&gt;<br>
+&lt;summary&gt;example&lt;/summary&gt;<br>
 {% raw %}
-{% highlight shell%}<br>
+{% highlight <i>code type</i> %}<br>
 {% include file.ext %}<br>
 {% endhighlight %}<br>
 {% endraw %}
@@ -85,10 +89,11 @@ Code here
 </table>
 
 
-Note: In jekyll, each symbol is commented out with \, and the jekyll syntax is commented
+Note: In markdown each symbol is commented out with \, the jekyll syntax is commented
 with [raw and
-endraw](https://stackoverflow.com/questions/20568396/how-to-use-jekyll-code-in-inline-code-highlighting).
-
+endraw](https://stackoverflow.com/questions/20568396/how-to-use-jekyll-code-in-inline-code-highlighting),
+and the html is commented out by substituting &amp;lt; for < and &amp;gt; for > (&
+substitues as &amp;amp;).
 ### Mobile
 For mobile testing (`make build-mobile` using [responsive
 design](https://developers.google.com/web/fundamentals/design-and-ux/responsive)) make
@@ -105,10 +110,13 @@ this website is located [here](/sitemap.xml), with an example bash script locate
 [here](https://github.com/mwyoung/mwyoung.github.io/blob/master/_code/ping.sh) or shown
 below.
 
-#### **`ping.sh`**
-```shell
+<details>
+<summary>ping.sh</summary>
+{% highlight shell%}
 {% include ping.sh %}
-```
+{% endhighlight %}
+</details>
+<h6>&nbsp;</h6>
 
 ### 404
 A good 404 page build guide is available in the [jekyll docs](https://jekyllrb.com/tutorials/custom-404-page/).
