@@ -11,10 +11,34 @@ The goals for this project include a weather station that is easy to view along 
 containing lots of information about the current weather.
 
 ### Hardware
+<img align="right" width="200"
+src="https://user-images.githubusercontent.com/10273995/68053467-388dcb00-fca9-11e9-84e9-5c2e924aef77.jpg">
 The hardware for this project includes an [ESP8266 WeMos D1
-Mini](https://wiki.wemos.cc/products:d1:d1_mini)
+Mini](https://wiki.wemos.cc/products:d1:d1_mini), a 1.8 TFT LCD display, a PIR motion
+sensor, buttons, resistors, BJTs (2n4401 and 2n4403), and a photoresistor.
+
+The PIR motion sensor allows the weather station to automatically wake when motion is
+detected along with having sleep hours in the night to not blind a user. The button is
+used to manually update the device without having to reboot the weather station.
+
+The photoresistor is used to adjust the display brightness, and can have a maximum
+brightness set if needed. The BJTs are used as a [high side
+switch](https://www.baldengineer.com/low-side-vs-high-side-transistor-switch.html) for the
+LCD, and two bjt setup is used for safety. This allows the display to change the
+brightness as the ground is connected internally in the display PCB.
+
+<details>
+<summary>Schematic</summary>
+<img src="https://raw.githubusercontent.com/mwyoung/Weather-Station/master/weatherPCB/WeatherPCB.svg?sanitize=true">
+</details>
+<h6>&nbsp;</h6>
+The PCB was purchased from JLCPCB for ~$10 including shipping, and took about 25 days to
+arrive from China to the U.S.
 
 ### Software
+The software used for this was the Arduino IDE, which was used for programming and sending
+serial debugging hints. The included makefile has a section for launching the IDE along
+with creating the icons for the display.
 
 ### Darksky API
 This project uses the [dark sky api](https://darksky.net/dev) as it allows up to 1000 free
