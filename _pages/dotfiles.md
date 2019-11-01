@@ -5,6 +5,7 @@ date: 2019-01-01
 ---
 Some dotfiles can be found [here](https://github.com/mwyoung/Dotfiles).
 
+### Intro
 There are many ways to configure bash/vim setups, but it should not be done not knowing
 what commands are being set (so don't do it blindly, consult a [man
 page](https://linux.die.net/man/)).

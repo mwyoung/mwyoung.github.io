@@ -24,9 +24,9 @@ usually inactive and 100 if being constantly updated.
 The current settings include updating with motion more often than when off. However, it is
 still updated constantly so that if there is motion there is something to display.
 
-There is also a security risk as it does not use encryption to call the api. However,
-since the only data being transmitted in GPS coordinates (which can be set to be a bit off
-in location) and json being received means there is a low risk to it being compromised.
+There is also a security risk as it does not use encryption to call the api. This is
+vulnerable to man-in-the-middle attacks, and can leak some data. This part of the code
+will probably be updated to not have this vulnerability in the future.
 
 ### Weather Icons
 The icons used are from [erikflowers's
