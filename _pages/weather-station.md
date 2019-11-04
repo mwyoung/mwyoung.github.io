@@ -37,8 +37,9 @@ arrive from China to the U.S.
 
 ### Software
 The software used for this was the Arduino IDE, which was used for programming and sending
-serial debugging hints. The included makefile has a section for launching the IDE along
-with creating the icons for the display.
+serial debugging hints. The included
+[makefile](https://github.com/mwyoung/Weather-Station/blob/master/makefile) has a section
+for launching the IDE along with creating the icons for the display.
 
 ### Darksky API
 This project uses the [dark sky api](https://darksky.net/dev) as it allows up to 1000 free
@@ -48,9 +49,10 @@ usually inactive and 100 if being constantly updated.
 The current settings include updating with motion more often than when off. However, it is
 still updated constantly so that if there is motion there is something to display.
 
-There is also a security risk as it does not use encryption to call the api. This is
-vulnerable to man-in-the-middle attacks, and can leak some data. This part of the code
-will probably be updated to not have this vulnerability in the future.
+The code also uses a root certificate from Darksky to remove the vulnerability of
+man-in-the-middle attacks. This code can choose to not check the certificate if not
+compiled with src/cert.h and the \#def USE\_CERT. This would then be more vulnerable to
+attacks.
 
 ### Weather Icons
 The icons used are from [erikflowers's
@@ -79,3 +81,5 @@ power-saving mode instead.
 ### Helpful links
 [Bodmer's DarkSkyWeather](https://github.com/Bodmer/DarkSkyWeather) is a very good
 resource for a ESP8266 weather station.
+[BearSSL_Validation](https://github.com/esp8266/Arduino/blob/master/libraries/ESP8266WiFi/examples/BearSSL_Validation/BearSSL_Validation.ino)
+is a good resource for including a root certification into a project.

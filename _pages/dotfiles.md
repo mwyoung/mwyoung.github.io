@@ -52,6 +52,33 @@ suggestions.
 </details>
 <h6>&nbsp;</h6>
 
+Other helpful guides include [sheerun](https://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/) and others.
+
+### i3 WM
+i3 windows manager is a tiling windows manager, where most of the actions are controlled
+from the keyboard. The major advantage is that default programs need to be started
+specifically before being used.
+
+The [config](https://github.com/mwyoung/Dotfiles/blob/master/.config/i3/config) file
+contains all the information used to setup i3. This config is setup for a Thinkpad T440s
+and its keyboard hotkeys, so everything might not work on a different machine. Additions
+to the config file include starting up NetworkManager, redshift (for a color shift),
+notifications, and an service for calling a GUI sudo (for mounting drives). Other
+additions include media buttons, a power menu, brightness control, and changing sleep
+settings.
+
+The only major downside is working with programs that are not built for tiling windows
+managers, like some virtual machines or software like KiCad. The setup can be awkward, but
+still work.
+
+<details>
+<summary>config</summary>
+{% highlight shell%}
+{% include config %}
+{% endhighlight %}
+</details>
+<h6>&nbsp;</h6>
+
 ### Miscellaneous
 #### Rsync
 When syncing between two machines, rsync can be nice as it can include/exclude files from
@@ -62,7 +89,6 @@ a file, and only copy changed files.
 {% highlight shell%}
 {% include copy.sh %}
 {% endhighlight %}
-</details>
 <details>
 <summary>include/exclude</summary>
 <h4><b>copy_include</b></h4>
@@ -74,8 +100,10 @@ a file, and only copy changed files.
 {% include copy_exclude %}
 {% endhighlight %}
 </details>
+</details>
 <h6>&nbsp;</h6>
 
 #### Git
 Git is a pretty good source control manager, and can be used locally (without GitHub) if
-necessary.
+necessary. It is also suggested if using vim to use vim-fugitive to display the current
+branch.
