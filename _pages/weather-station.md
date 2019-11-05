@@ -41,6 +41,16 @@ serial debugging hints. The included
 [makefile](https://github.com/mwyoung/Weather-Station/blob/master/makefile) has a section
 for launching the IDE along with creating the icons for the display.
 
+There is also several test programs, which includes programs to test the [TFT Display, pwm
+and
+photoresistor](https://github.com/mwyoung/Weather-Station/tree/master/tests/TFT_Display),
+test the [PIR motion
+sensor](https://github.com/mwyoung/Weather-Station/tree/master/tests/Motion), and to test
+the [root
+certificate](https://github.com/mwyoung/Weather-Station/tree/master/tests/BearSSL_Weather)
+(and includes timing analysis). Code to remove the SPIFFS file is located [on
+Github](https://github.com/mwyoung/SPIFFS_Remove_All).
+
 ### Darksky API
 This project uses the [dark sky api](https://darksky.net/dev) as it allows up to 1000 free
 api calls per day. With the current api data savings, the project uses 50 calls when
@@ -52,7 +62,10 @@ still updated constantly so that if there is motion there is something to displa
 The code also uses a root certificate from Darksky to remove the vulnerability of
 man-in-the-middle attacks. This code can choose to not check the certificate if not
 compiled with src/cert.h and the \#def USE\_CERT. This would then be more vulnerable to
-attacks.
+attacks. This addition adds about 300 ms to the HTTPS GET call, in addition to the 2
+seconds it took for the call without the certificate check. This was calculated with the
+[BearSSL_Weather](https://github.com/mwyoung/Weather-Station/tree/master/tests/BearSSL_Weather)
+test.
 
 ### Weather Icons
 The icons used are from [erikflowers's
