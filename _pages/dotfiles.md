@@ -107,3 +107,41 @@ a file, and only copy changed files.
 Git is a pretty good source control manager, and can be used locally (without GitHub) if
 necessary. It is also suggested if using vim to use vim-fugitive to display the current
 branch.
+
+#### Makefiles
+[Makefiles](https://www.gnu.org/software/make/manual/html_node/Introduction.html) are
+handy
+[resources](http://web.engr.oregonstate.edu/~traylor/ece473/lectures/programming_env_makefiles.pdf)
+when compiling code with not much complexity, as there are better tools for larger
+projects. However, for things [like
+microcontrollers](https://github.com/mwyoung/LED-Cube/blob/master/makefile) or repeated
+actions makefiles can be nice to have.
+
+In makefiles, `=` sets the variable when it is used, and `:=` sets the variable when first
+initialized. For commands in rules that begin with `-` means that the rule won't fail if
+that command fails. If a command goes to the next line, it can be broken up with `\` to
+seperate the command but keep it as one command.
+
+Some automatic variables that are nice to know include `$@` for the file name in the rule
+target, `$<` for the name of the first prerequisite, `$?` for newer files of
+prerequisites, and `$^` for the name of all of the prerequisites.
+
+It can also be nice to remove files with a `clean` rule like `-rm -rf file *.ext`. Another
+use is to zip/tar files with a command (for uploading files). If using
+[zip](https://linux.die.net/man/1/zip), the command could be `zip -u zipfile.zip files...
+|| true` where -u is update. For [tar](http://man7.org/linux/man-pages/man1/tar.1.html),
+an example could be `tar -u -v -f file.tar files...` where `-u` is `--update`, `-v` is
+`--verbose`, and `-f` is `--file`.
+
+#### a2ps
+[a2ps](https://linux.die.net/man/1/a2ps) is a program to print files (like code) to
+postscript or pdf along with having nice formatting. Some
+[options](http://web.engr.oregonstate.edu/~traylor/ece473/beamer_lectures/a2ps.pdf) that
+are nice to have include `-P pdf` for printing to pdf (or `--printer=`),
+`--file-align=virtual` so there are no blank spots on pages, `--medium=Letter` to change
+from the default page size, `--header=` or `--left-footer="text"` to change the headers
+(with [meta sequences](http://theochem.ki.ku.dk/on_line_docs/a2ps/a2ps_3.html) like %E for
+date in local format), and `-T 4` (or --tabsize) for 4 spaces per tab.
+
+An overall command could then be `a2ps -P pdf <files> --file-align=virtual --medium=Letter
+--header= --left-footer="Name - %E" -T 4`.
