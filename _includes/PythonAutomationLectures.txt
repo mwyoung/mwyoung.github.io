@@ -1,0 +1,621 @@
+1 - Python Basics
+https://automatetheboringstuff.com/chapter1/
+---
+1 - Intro
+Type all of the examples, such as print('msg')
+Try to find answers on web, like stack overflow
+    - Explain trying to do not did, error message location/type, copy/paste to website
+    - OS, python ver, what already did to solve
+
+2 - Basic terminology and using IDLE
+Interactive shell - idle >>>
+2 + 2           //expression, go to single value
+//Can do +, -, *, /, ** (exponent), % (mod/remainder); Parentheses matter...
+Error msg - shows SyntaxError
+DataType - each value belongs to category: ints, floats, 'string'
+    - String concat -> use 'a' + 'b'
+    - String duplicate -> use 'a' * 2
+var = 42        //store value, can overwrite
+Evaluates to single val = expression, value + operator; doesn't evaluate = statement
+Ctrl+enter gets new line on console
+
+3 - writing 1_intro.py
+# is a comment
+print(' ') or print(' ', end=''), var = input()
+functions - many built in, func(argument/value)
+input() - waits for enter, is a string value
+len(string) - int of chars in string
+str()/int()/float() - convert to data type
+
+==========================================================================================
+
+2 - Flow Control
+https://automatetheboringstuff.com/chapter2/
+---
+4 - Flow charts
+Decision making - yes/no questions, go to end
+    - Boolean vals (True/False), comparison operators (==,!=,<,>,<=,>=), boolean optr
+        - str != int, int can == float; = assigns, == compares
+    - and,or,not instead of &&,||,!
+
+5 - If, Else, Elif
+condition == expression, if condition true - go into if/else
+indentation - tells block for if/flow, block == clause -> ends line with :
+else - run if condition false
+elif - enters first block with true statement, not any others
+false -> string - blank string == false, int - 0 == false, bool(value) == 1 if not 0
+
+6 - While
+Keeps looping while true, goes to start if condition true
+    - could be used to validate names
+Infinite loops - condition never met, quit with ctrl+c
+Break - stops loop, use in if, does not recheck condition
+Continue - goes back to loop, rechecks condition
+
+7 - For Loop
+Iterates a specific number of times, range(#) goes from 0 to (#-1)
+    - range(start, end)->goes start to end; range(start, end, step)->change increase val
+    - ex range(5, -1, -1) - goes from 5 to 0 going down by -1
+Can use break/continue
+Can use a while loop instead of for loop
+
+==========================================================================================
+
+3 - Functions
+https://automatetheboringstuff.com/chapter3/
+---
+8 - Built in functions
+print, input, len
+Standard library - group of functions (math, random, sys, os, etc.)
+need to import with 'import lib, lib2', use module.function to use
+    - or 'from lib import *' allows function to run without module.funciton, less readable
+quit - use 'sys.exit()'
+pip - install 3rd party module
+    pip install pyperclip - copy to system clipboard, .copy() or .paste(); also need xclip
+
+9 - Creating functions
+Runs code, multiple times, only runs when called
+    - avoid duplication -> less bugs
+example: def function_name(arguments):
+    - arguments = values passed to function, parameter = variable inside function
+    - can specify return value with return 'value'
+None type, lack of value; if no return value, function returns None
+Keyword arguments - optional arguments, ex (arg, arg2='value')
+    ex print('t1', 't2', end='\n', sep=' ') - is new line, seperate each t# with space
+
+10 - Global/local
+Variable - in function = local, in file = global; can be same name
+    - destroyed when function (local) or program (global) ends
+Global - can not use local, local destroyed after end
+Local - can access global, can't access other local
+    - if duplicate local and global, only if assigned in function uses local, else global
+    - change global variable -> need to add global variable to top of function
+    - seperate code from global variable - reduce area to check
+    - functions as black boxes -> return values matter only
+
+==========================================================================================
+
+4 - try/except
+---
+11 - Try/Except statements
+Can't run instruction (like divide by zero) -> crash program
+try: ... except <error>:
+Used for input validation - like ValueError
+Error in try -> exception -> handle/error message, keep running program
+
+==========================================================================================
+
+5 - First program
+---
+12 - Guess a number program
+ - see program, use if/else, for loop, rand, input
+
+==========================================================================================
+
+6 - Lists
+https://automatetheboringstuff.com/chapter4/
+---
+13 - List data type
+List - values/items, orders in list, like array[number], can be 2D or 3D
+    - example: [['a', 'b'], [10, 20, 30]]
+    - Negative integer -> go from end to front, -1 = last; still has a range
+Index - goes to one value, like array[1]
+    - Can replace values, just assign value in range that exists, array[1] = new_val
+Slice - start and end index, array[1:3], goes from 1 to 2 (not including 3)
+    - can do with slices -> can also add to array range
+    - Can leave out number on either side of colon -> uses whole range
+Delete - use del array[number], unassign
+String-like functions
+    Length - use len(array) for range
+    Concat - can combine with '+'
+    Replication - can multiply, like concat multiple times
+list function - convert each value (like string chars) to a list
+In/not in operator - check if value is in/not in list, is a expression
+    - 'ex' in ['ex', '1'] -> is true as 'ex' is in the list, not reverses output
+
+14 - For loops w/ lists, multiple assign, augmented operators
+for i in [0, 1, 2, 3]: instead of range(4), i goes through list
+    - ex list(range(number)) -> integers in a list
+    - range(len(aList)) -> goes through list, could be string, access with aList[i]
+Multiple assignment - assigns values from array, ex. var1, var2, var3 = list
+    - can have multiple values for lists, ex. var1, var2, var3 = val1, val2, val3
+    - Used for swap, ex. var1, var2 = var2, var1
+Augmented Assignment Operator - ex. var += 1 to add, +=,-=,*=,/=,%=; is shortcuts
+
+15 - List methods - index(), append(), insert(), remove(), sort()
+Method - function, called on a value with list.func(), no duplication
+    - index(val) - finds first index of value, returns index, error if not in list
+    - append(val) - adds to end of list, returns None
+    - insert(num, val) - inserts at index, returns None type
+    - remove(val) - removes first value in array, error if not in list
+        - use del array[num] to remove at a index
+    - sort() - ints, str (alphabetize, use sort(reverse=True) for reverse alphabet)
+        - can not do list with both int and strings...
+        - uses ASCII order sort(key=str.lower) -> converts string to lower case
+
+16 - List vs String
+String - can use sort, slicing, indexing, not/in, for loop (for i in str:)
+    - immutable, can't change letter using index, can't be modified only replaced w/ new
+        - instead use slices with parts removed - ex str[0:3] + 'char' + str[4:7]
+List
+    - mutable, index can be changed, is a reference/pointer, easier to copy
+        - Pass to function -> function changes saved
+    - for full copy, use import copy; copy.deepcopy(val)
+line continuation - lists can span multiple lines, only ends with ]
+    - or use \ for a new line, for string concat, etc; indentation doesn't matter
+
+==========================================================================================
+
+7 - Dictionaries
+https://automatetheboringstuff.com/chapter7/
+---
+17 - Dictionary Data Type
+Like a list, index does not need to be integer, use key instead (key value pair)
+    ex. dict = {'key':'value', ...}; use dict['key'] for value
+    unordered, but can have values in different order be the same, uses references
+    not exist - get KeyError msg
+    Check is in dict, use 'key' in dict
+Methods - return list like data types, need to pass with list(dict.fun())
+    - dict.key() - shows all keys
+    - dict.values() - shows all values
+    - dict.items() - returns tuple of key value pairs
+        - tuple = list-like, immutable, use parentheses
+    ex. for k, v in dict.items() - tuple loop, k,v has values
+    Check with 'val' in dict.values()
+    - dict.get(key,fallback) - fallback is default value if key DNE
+    - dict.setdefault('key', 'val') - sets val if not already in dict, if exists do nothing
+pprint - pretty print dictionary, use pprint.pprint() for direct, .pformat() to string
+
+18 - Data Structures
+ex. data structure of lists of dictionaries, can be arbitrary -> easy to remember
+Type function - shows data type, ex type(val)
+
+==========================================================================================
+
+8 - String Manipulation
+https://automatetheboringstuff.com/chapter6/
+---
+19 - Advanced String Syntax
+String - Common form of data, 'format' or "format", use \ to escape
+    - \t tab, \n newline, \\ backslash, \', \"
+    - Raw string, r'string', displays backslashes literally
+    - Multiline string, start/end with ''' or """
+    - Use index and slices for string
+        - 'string' in string, is case sensitive
+
+20 - String Methods
+Return new string, can't modify in place, are immutable
+    - str.lower()/string.upper() - convert all chars to lower or upper
+        - Useful for comparisons, if string.lower() == 'true':
+    - str.islower()/string.isupper() - checks if any 1+ char is lower/upper
+        - false if blank screen, needs at least one char
+        - isalpha() (letter only), isalnum() (letter/num only), isdecimal() (num only)
+          isspace() (whitespace only), istitle() (Titlecase Only, Words Upper For 1st Char)
+    - str.startswith('str')/.endswith('str') - t/f if string starts/ends with 'str'
+    - str1.join(list of str), combines strings together with str1 being seperation mark
+    - str.split('char'), seperate string to list, seperate with char, default/blank = space
+    - str.ljust(num)/rjust(num,'char'), left/right justify text w/ space, 'char' optional
+        -str.center(num) - centers text with number size
+    - str.strip('char') - default: remove whitespace from string, or char for other chars
+        - .lstrip()/.rstrip() - left/right strip
+    - str.replace('old','new') - replace all old string with new
+    - pyperclip.copy()/.paste() - use system clipboard
+
+21 - String Formatting (string interpretation)
+'str %s %s' % {str1, str2}
+    - %s is conversion specifier
+
+==========================================================================================
+
+9 - Running programs
+https://automatetheboringstuff.com/appendixb/
+---
+22 - Launch programs outside IDLE
+1st line of all programs - shebang line #!/usr/bin/python3
+    - requires python to use python3 to run
+    - can run program without specifying program (on linux)
+Windows - #! python3
+    - run with py.exe C:\path\to\program.py, run dialog Win+R
+        - pyw is python without command line window
+    Batch file: (%* forwards command line args to program, is all args)
+        @py c:\users\path\program.py %*
+        @pause
+    path - windows shortcut
+        Control panel -> settings -> advanced system settings -> environment vars
+            -> path variable -> add path to folder, seperate with :
+Linux - use chmod +x program.py, then run with ./program.py
+Command line arguments/options, strings in sys.argv
+
+==========================================================================================
+
+10 - Regular Expressions
+https://automatetheboringstuff.com/chapter7/
+---
+23 - Regex
+Pattern matching and regular expressions -> text patterns, ex 123-456-7890
+use re module, use re.compile(r'str', flags=) -> use raw string, flags optional
+    - match = regex.search('str') to match option, finds first match, result with match.group()
+    - use regex.findall('str') to return list of all matches
+\d = digit
+
+24 - Regex Groups and Pipes
+Use (...) for groups, place regex inside (), use regex.group(num), num is which group in regex
+    - for () in text, escape with \( and \)
+    - group(0) returns full match string, group(1) returns match string of group 1, ...
+| = pipe, match several patterns in regex, ex r'str(a|b|c)'
+No match -> return NoneType
+
+25 - Repetition in Regex, Greedy/Nongreedy Matching
+For specific number of repetitions, could be a range
+    - ? match preceding group 0 or 1 times, optional, appear once or not at all
+        - ex r'Bat(wo)?man' either appears or not
+        - escape with \?
+    - */astrisk, match 0 or more times, escape \*
+    - +/plus, match 1 or more, escape \+
+    - {x}/exactly x, specific number of times for repetition
+    - {x,y}/range x to y, including, can leave off number, goes unbounded like slices
+        - default greedy match, longest possible string for pattern
+        - non-greedy, use {x,y}? for smallest possible string
+
+26 - Regex Char Classes, findall() method
+.findall() - find all text
+    - if 0 or 1 groups, return list of strings -> text matching pattern
+    - if 2+, returns list tuples strings of matches, some combinations of groups if overlap
+Char class - uppercase is inverse
+    - \d = digit 0-9, \w = letter, digit, underscore, \s = space, tab, newline
+    - \D = char not digit, \W = not letter/digit/_, \S = char not space, tab, newline
+Create a char class [] + chars in class, can use range like [a-z] or [a-zA-Z]
+    - For chars, need both upper and lower case, exact is [a-z]{2} -> 2 in a row
+    - ^ is negative, is an opposite, [^a-z], for no spaces [^a-z\s]
+
+27 - Regex .* and ^$
+Requires ^ if starting with, $ if ending with, ^both$ = entire text
+. = any char but newline
+.* = any character, 0 or more -> any pattern
+    - ex can do r'text: (.*) text2: (.*)' for tuples of data
+    - .* is greedy as much text as possible, .*? is non-greedy, 1st match
+    - use with newline, in regex.compile(r'...', re.DOTALL) add re.DOTALL
+        - case insensitive -> use re.IGNORECASE (same as re.I)
+Options - 2+, use re.IGNORECASE | re.DOTALL -> bitwise or operator
+
+28 - Regex sub() and Verbose
+Substitution - use regex.sub('to replace', 'string')
+    - \num -> replace in group, group (\w) -> sub with r'text \1' -> get group 1
+Verbose\re.VERBOSE - add newlines to string, need to use ''' text ''', can add <space*2>#comment
+
+29 - Example Program
+Use regex to get phone number/email -> output to clipboard
+
+==========================================================================================
+
+11 - Files
+https://automatetheboringstuff.com/chapter8/
+https://automatetheboringstuff.com/chapter9/
+---
+30 - Filenames, absolute/relative
+File - single long string, file path + file + file extension -> location on file system
+    - Root folder: C:\ (Windows, need to use \\ to escape), / (Linux/Mac)
+import os -> os.path.join('path','to','file.ext') converts to os file path, os.sep=seperator
+    - os.getcwd() - get current work dir, if opening file w/o path - assume cur work dir
+    - os.chdir() - change directory
+    Absolute - always begin with root folder, relative - to current working dir
+        - . = this folder, .. = parent folder
+    - os.path.abspath('file.ext') - relative to absolute folder path, given file ref
+    - os.path.isabs('path') - true if is absolute path
+    - os.path.relpath('path1', 'path2') - gives relative path of current path (path2)
+    - os.path.dirname() - directory path of file
+    - os.path.basename() - file.ext or last file part of path
+    - os.path.exists(path) - true/false if path exists
+        - os.path.isfile() / os.path.isdir() - check if file/dir exists
+    - os.path.getsize(path) - gets file size in bytes (int)
+    - os.listdir(folder) - list of folders/files inside a folder
+    - os.makedirs(path) - create folders if not exist, can do folders in folders
+
+31 - Read/Write plaintext
+Plaintext - no font/size/color, .txt files, open w/ text editor; binary - image/doc/misc
+file = open('filename') - open in read mode, default mode, can't write
+    - open('filename', 'w') - write mode, use 'a' for append, if not exist -> new file
+        - returns bytes written, need to state '\n' for newlines
+    - file.read() - read file string
+        - file.readlines() - return list of all lines of a file
+    - file.close() - close file
+    - file.seek(bytes) - go to file location, use 0 for start of file
+Save variables to binary shelve module -> import shelve
+    - like dictionary with key/value, save non-text data
+    - use file = shelve.open('file') to create, file['var'] =['var1','var2'] to save
+        - access with file['var'] after open, close with file.close()
+        - file.keys() - get keys, file.values() - get values, use list(file...) to list
+
+32 - Copy/Move Files/Folders
+Organize files - copy, rename, etc. -> import shutil (shell utils)
+    - shutil.copy(src file, dest) copies, rename -> shutil.copy(file, dest/rename)
+    - shutil.copytree(src folder, dest folder) - copy folders
+    - shutil.move(src file, dest) moves, also renames like copy could have same dest
+
+33 - Deleting Files
+Permanent delete files - be careful
+    - os.unlink('file') - deletes a single file
+    - os.rmdir(directory) - delete a directory, no files/folders inside it
+    - shutil.rmtree(directory) - delete directory + contents
+dry run - comment code for delete code, instead print filename
+module send2trash -> use pip
+    - send2trash.send2trash(folder or file) - moves to trash
+
+34 - Walking a Directory Tree
+    - os.walk(absolute path), return string foldername, list subfolders, and list filenames
+        - walks though path, go in iteration
+
+Zip files - use import zip
+file = zipfile.ZipFile('fileToCreate.zip') - opens a zipfile
+    - file = zipfile.ZipFile('new.zip', 'w') - creates
+    - file.write(file, compress_type=zipfile.ZIP_DEFLATED) - adds to file
+    - file.namelist() - lists file in zip
+    - file.getinfo('file') - gets information on file (file_size, compress_size)
+    - file.extractall() - extracts files, file.extract('file') extracts single file
+    - file.close() - close zip
+
+==========================================================================================
+
+12 - Debugging
+https://automatetheboringstuff.com/chapter10/
+---
+35 - Raise/assert
+raise Exception('error str') - custom message, if no try/catch -> crash
+traceback - import traceback, use traceback.format_exc()
+Assert - sanity check, assert error raise if not true, for logic errors
+    - assert conditional statement, 'error msg'
+
+36 - Logging
+import logging, logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+    - basicConfig(...,datefmt='%Y-%m-%d %H:%M:%S)
+    - logging.debug('msg %s' % (str)), at lowest level
+        - log levels (low) debug, info, warning, error, critical (high)
+        - turn off msg w/ logging.disable(logging.CRITICAL) #place after .basicConfig
+    - text file - logging.basicConfig(filename='file.txt', level=...)
+Print - harder to remove after done debugging
+
+37 - Debugger
+Use IDLE, debug -> debugger, select stack,local, source, globals
+    - or use python3 -m pdb program.py, n = next, s = step, w = stack trace (where), p var
+Breakpoints - IDLE - right click line -> set breakpoint
+
+==========================================================================================
+
+13 - Web Scraping
+https://automatetheboringstuff.com/chapter11/
+---
+38 - Webbrowser Module
+import webbrowser, can .open('url') in default browser
+
+39 - Downloading with Requests Module
+requests - avoid network errors, compression, etc, use pip install
+    - response = requests.get('url of file')
+        - returns response.status_code, 200 = OK, 404 = file not found
+        - response.text - gets text outout
+        - response.raise_for_status() - is nothing if status succeeded, exception if not
+    - save with open(file, 'wb') -> write binary mode, for unicode
+    - response.iter_content(num) - iterates over content in num size chunks
+https://nedbatchelder.com/text/unipain.html
+    - str use b'' for bytes, default is unicode
+
+40 - Parse HTML with Beautiful Soup Module (web scrape)
+Web browser -> view source with ctrl+u; dev tools -> hover over elements, or highlight + inspect
+pip install beautifulsoup4, import bs4
+    - requests.get(url, headers=header_file) -> if needing user agent
+    - output = bs4.BeautifulSoup(response.text, 'html.parser;') parses
+    - elems = soup.select('css path')
+        - access with elems[0].text, use strip to remove \n and space
+        #css selector to find, highlight + right click + Inspect -> right click -> copy -> copy selector (css path)
+
+41 - Control Browser with Selenium Module
+pip install selenium -> use javascript, fill out forms, click buttons; launches web browser
+**Need to download drivers if using, firefox not included anymore**
+    - from selenium import webdriver
+    - browser = webdriver.Firefox() - launch firefox GUI
+        - browser.get(URL)
+        - browser.back(), .forward(), .refresh(), .quit()
+    - elem = browser.find_element_by_css_selector(CSS) gets one element
+        - elem.click() clicks on elt, elem.send_keys('text') sends text
+        - elem.submit() auto submits, elem.text = text for section
+    - elems = browser.find_elements_by_css_selector('p') gets all paragraph elts
+        - or by class_name, id, link_text/partial_link_text, name, tag_name
+        - all text -> use 'html' element gets all text
+
+==========================================================================================
+
+14 - Excel, Word, PDF Documents
+https://automatetheboringstuff.com/chapter12/
+https://automatetheboringstuff.com/chapter13/
+---
+42 - Reading Excel Spreadsheets
+pip install openpyxl, workbook -> sheet -> col/row -> cell
+    - wkbk = openpyxl.load_workbook('file.xlsx') - opens file
+        - wkbk.sheetnames - returns list of sheet names
+            - wkbk.get_sheet_names() - depreciated
+    - sheet = wkbk['Sheet1'] - open sheet from workbook
+        - wkbk.get_sheet_by_name('Sheet1') - depreciated
+    - sheet['A1'].value - get cell A1 value from object, uses Excel's data type
+        - sheet.cell(row=1,column=1) - get with row/column, start at 1
+
+43 - Editing Excel Spreadsheets
+    - wb = openpyxl.Workbook() - creates workbook
+        - wb.save('filename.xlsx') - saves file
+    - sheet['A1'] = <val> - assigns value to cell
+    - sheet2 = wb.create_sheet() - creates a new sheet
+        - wb.create_sheet(index=0, title='title'), creates w/ title and location
+        - sheet2.title = 'new title' - changes title
+
+44 - Reading/Editing PDFs
+import PyPDF2, PDFs are binary file-> font, color, pictures, text
+    - sometimes can not open/work with some PDF files, can't extract images/media
+    - pdf = open('file.pdf', 'rb') - use binary read mode
+    - reader = PyPDF2.PdfFileReader(pdf) - opens file
+        - reader.numPages - number of pages, start at 0
+    - page = reader.getPage(0) - gets page
+        - page.extractText() - gets text as a string, can have errors
+    - writer = PyPDF2.PdfFileWriter()
+        - writer.addPage(reader.getPage(num)) - adds page to different pdf, for reordering
+    - output = open('file','wb'); writer.write(output) - saves file
+**Don't forget to close after done**
+
+45 - Reading/Editing Word Docs
+pip python-docx; import docx; lots of structure doc object -> paragraph -> run objects
+    - doc = docx.Document('file') - opens
+        - doc.paragraphs - list of paragraph objects
+        - par = doc.paragraphs[num].text - text of each paragraph
+        - par.runs - list of run objects, change in style, par.run[num].text = text insidie
+            - p.runs[num].{bold,italic,underline} - show if true or false (None), can change
+        - par.styles = 'Title' -> changes to title style
+    - doc.save('file2') - saves file
+    - doc2 = docx.Document() - new file
+        - doc2.add_paragraph('str') - adds to paragraph
+        - par.add_run - adds run to paragraph
+Can not move text, should copy to new document only needed
+
+~~~
+Chapter 14 - CSV/JSON
+https://automatetheboringstuff.com/chapter14/
+---
+CSV - import csv
+file = open('file.csv'); reader = csv.reader(file); data = list(reader) -> is a list
+    - data[row][col] - access data
+outfile = open('file.csv', 'w', newline=''); outwrite = csv.writer(outfile)
+    - outwrite.writerow(list) - writes a list
+    - csv.writer(outfile, delimiter='\t',lineterminator='\n') - changes format
+
+JSON {"str": "var", "str2": "var2", ...} - import json
+jsonData = json.loads(str) - loads str into dict
+jsonStr = json.dumps(json) - outputs json to string
+
+~~~
+Chapter 15 - Time, Tasks, Launching
+https://automatetheboringstuff.com/chapter15/
+---
+Time - import time, from UTC
+time.time() - current system time, can save start & end, use end - start for diff
+    - round(time.time()) - in seconds, round(time, digits)
+import datetime - date format
+dt = datetime.datetime.now(); dt.year/month/day/hour/minute/second
+datetime.datetime.fromtimestamp(time_t) - gets value from timestamp
+delta = datetime.timedelta(days=#, hours=#, minutes=#, seconds=#) - total rep in time
+    - get delta.days/seconds/microseconds/total_seconds
+datetime.datetime.strptime('time str','format of %') - parse time
+
+Multithread - import threading
+threadObj = threading.Thread(target=func); threadObj.start() - starts function
+    - threading.Thread(target=func, args=['arg1',...],kwargs={...}) - ex. for print
+**Concurrency issues...**
+
+Launch - import subprocess
+proc = subprocess.Popen('path/to/prgm')
+    - has proc.poll() - if finished, proc.wait() - wait until done
+    - subprocess.Popen(['path/prgm', 'args'])
+    - subprocess.Popen(['program', 'args']) - open file with program
+time.sleep(num) - sleep shell
+
+~~~
+Chapter 17 - Images
+https://automatetheboringstuff.com/chapter17/
+---
+Use pillow (requires python3-tk, python3-dev)
+from PIL import ImageColor
+    - ImageColor.getcolor('color', 'RGBA') - gets format
+from PIL open Image
+    - img = Image.open('img.png'), img.save('filename.jpg') - open/save diff format
+        - width, height = img.size  - stores in vars
+        - has .filename, .format, .format_description
+    - img = Image.new('RGBA', (w,h), 'color') - creates image, if no color=transparent
+    - img.crop((left, upper, right, lower)) - crop coord
+    - img.paste(imgHandler, (w,h)) - paste onto image
+    - img.resize((width,height)) - resize img, can also stretch if ratio wrong
+    - img.rotate(deg) - rotates degree, rotate(deg, expand=True) - increase canvas
+    - img.putpixel((w,h), (rgb color))
+from PIL open ImageDraw
+    draw = ImageDraw.Draw(img) - draw on iamge
+    - has point, lines, rectangels, ellipses, polygons, text
+==========================================================================================
+
+15 - Email
+https://automatetheboringstuff.com/chapter16/
+---
+46 - Sending Email
+Use SMTP - Simple Mail Transfer Protocol, import smtplib
+conn = smtplib.SMTP('smtp.gmail.com', 587) - example smtp + port
+    - conn.ehlo() - start connection, tuple(code, bytes)
+    - conn.starttls(), conn.login(email,password) - encrypt & login to account
+    - conn.sendmail('from', 'to', 'Subject: ...\n\ntext\n\ntext') - \n\n seperates
+    - conn.quit() - exit smtp server
+
+47 - Checking Inbox
+IMAP - Internet Message Access Protocol - how to retreive emails
+pip install imapclient, pyzmail (not imaplib)
+conn = imapclient.IMAPClient('imap.gmail.com', ssl=True), returns success
+    - conn.select_folder('INBOX', readonly=True) - no deletion
+        - conn.list_folders() - list folders, tuple
+        - conn.delete_mssages([num, num1, ...]) - delete emails
+    -UIDs = conn.search(['SINCE $Date']) - email ids since date
+        - or all, before, on, since, subject, body, text, seen, unseen, answered, etc
+    - rawMsg = conn.fetch([num], ['BODY[]', 'FLAGS'])
+    - msg = pyzmail.PyzMessage.factory(rawMsg[num][b'BODY[]']) - msg object
+        - msg.get_subject(),.get_addresses('from') (or to/bcc)
+        - msg.text_part/.html_part - if None, then did not use
+    - msg.text_part.get_payload().decode('UTF-8')
+
+==========================================================================================
+
+16 - GUI Automation
+https://automatetheboringstuff.com/chapter18/
+---
+48 - Mouse
+pip pyautogui - last resort to control program
+    - 0,0 = top left corner, x/y increase going across
+    - pyautogui.size() - screen size; puautogui.position() - current position
+    - pyautogui.moveTo(x, y) - goes to location
+        - pyautogui.moveTo(x, y, duration=#) - duration in seconds
+    - pyautogui.moveRel(xOffset, yOffset) - move from current loc (+/-), also has duration
+    - pyautogui.click(x, y), or .doubleClick(x,y), .rightClick(x,y), .middleClick(x,y)
+        - if no x/y click current loc; can also take tuple value (x,y)
+    - pyautogui.dragRel(x, y) - go to x,y hold left click
+    - if at 0,0 -> exception, pyautogui has .1 sec pause after function to check
+    - pyautogui.displayMousePosition() - show x, y coord, and RGB value of mouse pixel
+        - requires use in terminal, not IDLE
+
+49 - Keyboard
+    - pyautogui.typewrite('text') - first click to focus window
+        - pyautogui.typewrite('text', interval=0.1) - interval to slow typing
+        - pyautogui.typewrite(['a', 'left', 'X']) - print character or command (cursor left)
+            - pyautogui.KEYBOARD_KEYS - list all key codes that can be used
+            - pyautogui.press('key') - press a single key
+        - pyautogui.hotkey('ctrl','o') - press keyboard shortcut
+
+50 - Screenshots and Image Recognition
+Use pyautogui/pillow (for images)
+    - pyautogui.screenshot('filename') - take screenshot, save image to filesystem
+    - pyautogui.locateOnScreen('filename.png') - locate png, x,y coord of where to find
+        - return x, y, width, height of image
+    - pyautogui.locateCenterOnScreen('filename.png') - locate center of image
+Note: can take up to 1 second, image needs to be exact same to locate
+
+51 - End
+
+==========================================================================================

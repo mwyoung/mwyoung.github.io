@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Dotfiles - bash/vim"
-date: 2019-01-01
+date: 2019-11-03
 ---
 Some dotfiles can be found [here](https://github.com/mwyoung/Dotfiles).
 
@@ -79,8 +79,7 @@ still work.
 </details>
 <h6>&nbsp;</h6>
 
-### Miscellaneous
-#### Rsync
+### Rsync
 When syncing between two machines, rsync can be nice as it can include/exclude files from
 a file, and only copy changed files.
 <details>
@@ -103,12 +102,12 @@ a file, and only copy changed files.
 </details>
 <h6>&nbsp;</h6>
 
-#### Git
+### Git
 Git is a pretty good source control manager, and can be used locally (without GitHub) if
 necessary. It is also suggested if using vim to use vim-fugitive to display the current
 branch.
 
-#### Makefiles
+### Makefiles
 [Makefiles](https://www.gnu.org/software/make/manual/html_node/Introduction.html) are
 handy
 [resources](http://web.engr.oregonstate.edu/~traylor/ece473/lectures/programming_env_makefiles.pdf)
@@ -133,7 +132,7 @@ use is to zip/tar files with a command (for uploading files). If using
 an example could be `tar -u -v -f file.tar files...` where `-u` is `--update`, `-v` is
 `--verbose`, and `-f` is `--file`.
 
-#### a2ps
+### a2ps
 [a2ps](https://linux.die.net/man/1/a2ps) is a program to print files (like code) to
 postscript or pdf along with having nice formatting. Some
 [options](http://web.engr.oregonstate.edu/~traylor/ece473/beamer_lectures/a2ps.pdf) that

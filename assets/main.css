@@ -1,3 +1,6 @@
+/* syntax style highlighting */
+@import "syntax_style.css";
+
 body {
     display: flex;
     flex-direction:column;
@@ -22,6 +25,11 @@ body {
     flex: 1 1 auto;
 }
 
+code {
+    /* force wrap code */
+    white-space: pre-wrap;
+}
+
 /* for tables */
 table, th, td{
     border: 1px solid black;
@@ -30,7 +38,8 @@ table {
     border-collapse: collapse;
 }
 td {
-    padding: 15px;
+    /* top right bottom left */
+    padding: 5px 10px 5px 10px;
     text-align: left;
 }
 

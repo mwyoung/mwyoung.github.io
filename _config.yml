@@ -2,7 +2,7 @@ name: mwyoung
 markdown: kramdown
 url: https://mwyoung.github.io
 
-permalin: /posts/:title
+highlighter: rouge
 
 collections:
     pages:

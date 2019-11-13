@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Jekyll Setup"
-date: 2019-10-02
+date: 2019-11-01
 ---
 ## Overall Setup
 This Jekyll setup used several guides, including
@@ -40,9 +40,15 @@ relative_url }}). This allows no year, month, or day to be shown in the url or f
 allows the date to easily be changed.
 
 ### Including code
-Using markdown and a `_includes/` folder allows the use of embedding code from a file
-that can be updated. An example of this is used in this webpage as the .gemrc and in the
-bash script below in webcrawlers.
+Using markdown and a `_includes/` folder allows the use of embedding code from a file that
+can be updated. An example of this is used in this webpage as the .gemrc and in the bash
+script below in webcrawlers. Jekyll also provides syntax highlighting with rouge
+(`ruby install rouge`) which can create [css
+styles](https://help.github.com/en/github/working-with-github-pages/about-github-pages-and-jekyll#syntax-highlighting)
+for a website.
+{% highlight shell %}
+{% include syntax_highlight.sh %}
+{% endhighlight %}
 
 There are two ways for showing code. One allows both markdown and html, the other uses
 only [html](https://caniuse.com/#feat=details) but can hide the code.
@@ -72,17 +78,19 @@ only [html](https://caniuse.com/#feat=details) but can hide the code.
     </tr>
     <tr>
         <td>
-<h4><b><code>example</code></b></h4>
-<code>
-Code here
-</code>
+<div markdown="1">
+#### **`example`**
+```
+{% include file.ext %}
+```
+</div>
         </td>
         <td>
 <details>
 <summary>example</summary>
-<code>
-Code here
-</code>
+{% highlight shell %}
+include code
+{% endhighlight %}
 </details>
         </td>
     </tr>
@@ -93,7 +101,12 @@ Note: In markdown each symbol is commented out with \, the jekyll syntax is comm
 with [raw and
 endraw](https://stackoverflow.com/questions/20568396/how-to-use-jekyll-code-in-inline-code-highlighting),
 and the html is commented out by substituting &amp;lt; for < and &amp;gt; for > (&
-substitues as &amp;amp;).
+substitues as &amp;amp;). Also, when including files in markdown, there is an extra
+newline added at the end of each file unlike when using html.
+
+To use markdown inside html, the tag &lt;div markdown="1"&gt; markdown code...
+&lt;div&gt; can be used.
+
 ### Mobile
 For mobile testing (`make build-mobile` using [responsive
 design](https://developers.google.com/web/fundamentals/design-and-ux/responsive)) make
