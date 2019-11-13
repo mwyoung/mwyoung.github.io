@@ -12,6 +12,7 @@ by date updated, but is static and does not show the date created.
 
 Some of the projects shown on this website include a [Weather
 Station](https://github.com/mwyoung/Weather-Station), an [Avr Serial
-Setup](https://github.com/mwyoung/avr-serial-test) for programming 328 microcontrollers, a
-[PCB Ruler](https://github.com/mwyoung/Adafruit-PCB-Ruler) for having a physical
-representation for parts, and a [LED Cube](https://github.com/mwyoung/LED-Cube).
+Setup](https://github.com/mwyoung/avr-serial-test) for programming (Microchip's, formerly
+Atmel) AVR ATmega328p microcontrollers, a [PCB
+Ruler](https://github.com/mwyoung/Adafruit-PCB-Ruler) for having a physical representation
+for parts, and a [LED Cube](https://github.com/mwyoung/LED-Cube).
