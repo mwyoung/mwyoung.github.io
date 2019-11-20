@@ -119,12 +119,13 @@ prevent the webpage from being shared over the local network. The command `sudo 
 There needs to be enough content for Google to actually crawl the website, along with
 taking some time to do so. The
 [sitemap](https://jekyllrb.com/tutorials/convert-site-to-jekyll/#11-add-a-sitemap) for
-this website is located [here](/sitemap.xml), with an example bash script located
-[here](https://github.com/mwyoung/mwyoung.github.io/blob/master/_code/ping.sh) or shown
-below.
+this website is located [here](/sitemap.xml) (and a [robots.txt](/robots.txt)). In order
+for search engines to locate the webpage, a [bash
+script](https://github.com/mwyoung/mwyoung.github.io/blob/master/_code/ping.sh) is used to
+ping Google and Bing.
 
 <details>
-<summary>ping.sh</summary>
+<summary>ping.sh (Google/Bing)</summary>
 {% highlight shell%}
 {% include ping.sh %}
 {% endhighlight %}

@@ -540,7 +540,7 @@ https://automatetheboringstuff.com/chapter17/
 Use pillow (requires python3-tk, python3-dev)
 from PIL import ImageColor
     - ImageColor.getcolor('color', 'RGBA') - gets format
-from PIL open Image
+from PIL import Image
     - img = Image.open('img.png'), img.save('filename.jpg') - open/save diff format
         - width, height = img.size  - stores in vars
         - has .filename, .format, .format_description

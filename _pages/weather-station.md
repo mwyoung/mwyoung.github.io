@@ -12,7 +12,7 @@ containing lots of information about the current weather.
 
 ### Hardware
 <img align="right" width="200"
-src="https://user-images.githubusercontent.com/10273995/68053467-388dcb00-fca9-11e9-84e9-5c2e924aef77.jpg">
+src="https://user-images.githubusercontent.com/10273995/69016963-2e7df480-0958-11ea-8470-089bf50c75a8.jpg">
 The hardware for this project includes an [ESP8266 WeMos D1
 Mini](https://wiki.wemos.cc/products:d1:d1_mini), a 1.8 TFT LCD display, a PIR motion
 sensor, buttons, resistors, BJTs (2n4401 and 2n4403), and a photoresistor.
