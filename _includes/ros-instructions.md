@@ -18,34 +18,29 @@ If you want to boot from USB:
  - edit etc/fstab, change/dev/mmcblk0p2 to sda2 and /dev/mmcblk0p1 to sda1 (root partition)
 
 ### Copying files to SD card
-Extract xz file:
-unxz --keep <file>
+`unxz --keep <file>` extracts the xz file to be able to be used.
 
 To copy: use `fdisk -l <file.img>` <br \>
  - get boot sector size (512 bytes, etc)
  - get value of offset (size * start, ex 512 * 2048)
 
-mount:
-sudo mkdir /media/path/img
-sudo mount -o loop,offset=<offset> <file.img> /media/path/img
+To then be able to mount the image (to copy files to it), use `sudo mkdir /media/path/img`
+and `sudo mount -o loop,offset=<offset> <file.img> /media/path/img`. For example, the
+starting offset could be 2048\*512 = 1048576, and the ending offset of 131072\*512 =
+67108864.
 
-2048*512 = 1048576
-131072*512 = 67108864
+To be able to copy files, use `cp` or `sudo cp <files...> /media/path/img/path...` in the
+source folder to be able to copy multiple files. If copying folders, `cp -r` needs to be
+used.
 
-copy files:
-In directory, use sudo cp <files...> /media/path/img/path...
-	cp -r may be needed if copying the entire folder
+To unmount the image, use `sudo umount /media/path/img/`.
 
-unmount:
-sudo umount /media/path/img/
+The process to copy an image to be able to be used first requires using `fdisk -l` to
+print all of the disks. Then find the /dev/mmcblk\*\*\* partition (could  be /dev/sd\*\*
+if USB) to then use the command `dd bs=4M if=<file.img> of=/dev/*** status=progress`.
 
-Copy to sd card
-
-fdisk -l
-	print all disks, find /dev/mmcblk*** number (could  be /dev/sd** if USB)
-dd bs=4M if=<file.img> of=/dev/*** status=progress
-	!! warning, using the wrong /dev/*** could destroy your computer/OS (dd is sometimes called disk destroyer) !!
-	This could also take a bit of time as it copies over to the sd card
+**Warning**: using the wrong /dev/\*\*\* could destroy your computer/OS (dd is sometimes
+called disk destroyer). This process may also take a bit of time.
 
 ### Ubuntu Mate setup
 Turn off auto updates
@@ -58,7 +53,10 @@ not needed by other packages. `sudo apt update` updates the package sources and 
 before updating packages with `sudo apt upgrade`, `sudo apt install <package>` installs a
 package, and `sudo apt remove <package>` removes a package.
 
-The packages that can be removed include: sudo apt purge youtube-dl youtube-dlg thunderbird libreoffice-core libreoffice-common minecraft-pi brasero transmission-common deja-dup atril hexchat account-plugin-* galculator gnome-orca shotwell-common plymouth snapd squeak-*
+The packages that can be removed include: sudo apt purge youtube-dl youtube-dlg
+thunderbird libreoffice-core libreoffice-common minecraft-pi brasero transmission-common
+deja-dup atril hexchat account-plugin-* galculator gnome-orca shotwell-common plymouth
+snapd squeak-*
 
 Other changes to have a faster desktop include installing the lxde windows manager with
 `sudo apt install lxde lxde-common lxsession-logout lxdm` and removing `sudo apt purge
@@ -84,45 +82,63 @@ frequency](https://www.raspberrypi.org/documentation/configuration/config-txt/ov
 to reduce the power of the system, which can be done with `sudo nano /boot/config.txt` and
 editing the line to `set arm_freq=1200`.
 
-If there is a problem of a long shutdown (due to cups-browsed), the command `sudo systemctl stop cups-browsed.service && sudo systemctl disable cups-browsed.service` can disable the service.
+If there is a problem of a long shutdown (due to cups-browsed), the command `sudo
+systemctl stop cups-browsed.service && sudo systemctl disable cups-browsed.service` can
+disable the service.
 
-Finally, to be able to decrease the default timeout, do `sudo nano /etc/systemd/system.conf` and on the line DefaultTimeout{Start/Stop}Sec=90s change it to 10s.
+Finally, to be able to decrease the default timeout, do
+`sudo nano /etc/systemd/system.conf` and on the line `DefaultTimeout{Start/Stop}Sec=90s`
+change it to 10s.
 
 ### ROS setup
-[Instructions from the ROS wiki](http://wiki.ros.org/kinetic/Installation/Ubuntu to install)
-Setup sources.list: `sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'`
+[Instructions from the ROS wiki](http://wiki.ros.org/kinetic/Installation/Ubuntu to
+install) Setup sources.list: `sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu
+$(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'`
 
-Then set up the keys used to verify the software with `sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116`. An alternate hkp server that can be used would be hkp://pgp.mit.edu:80 or hkp://keyserver.ubuntu.com:80
+Then set up the keys used to verify the software with `sudo apt-key adv --keyserver
+hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116`.
+An alternate hkp server that can be used would be hkp://pgp.mit.edu:80 or
+hkp://keyserver.ubuntu.com:80
 
 Then update the sources with `sudo apt-get update`. Finally, install the Desktop-Full
 (ROS, rqt, rviz, robot-generic libraries, 2D/3D simulators, navigation and 2D/3D
 perception) with `sudo apt-get install ros-kinetic-desktop-full`.
 
-Then install [ROSARIA](http://wiki.ros.org/ROSARIA), which is located at [github.com/reedhedges/AriaCoda](https://github.com/reedhedges/AriaCoda). This code can be installed with `make install`. If using catkin\_make, use catkin\_make -j 1 to limit the number of threads or else the system becomes very slow
+Then install [ROSARIA](http://wiki.ros.org/ROSARIA), which is located at
+[github.com/reedhedges/AriaCoda](https://github.com/reedhedges/AriaCoda). This code can be
+installed with `make install`. If using catkin\_make, use catkin\_make -j 1 to limit the
+number of threads or else the system becomes very slow
 
 ### Wifi Hotspot setup
-To be able to SSH into the Raspberry Pi when having a Wifi hotspot mode, it is helpful to know the IP address, which can
-be found using `hostname -I`.
+To be able to SSH into the Raspberry Pi when having a Wifi hotspot mode, it is helpful to
+know the IP address, which can be found using `hostname -I`. Then, on a different computer
+connected on the same network (or using the setup.sh script below), it is possible to SSH
+into the Raspberry Pi with `ssh ros-p3@10.x.x.1`, where 10.x.x.1 is the ip address (which
+can be different). If wanting to also have GUI access, use `ssh -X` to allow the program
+to send graphics to a linux computer.
 
-ssh ros-p3@10.x.x.1				connect from other machine to the pi, also connect to the wifi rpi-13 with password
+To decrease the amount of services running, use `sudo raspi-config`, and in `boot options`
+enable `cli boot`. To start a GUI in command line mode, use `startx`.
 
-To decrease the amount of services running, use `sudo raspi-config`, and in `boot options` enable `cli boot`. To start a GUI in command line mode, use `startx`.
-
-To be able to autostart the wifi, edit the file `sudo nano /etc/rc.local` and add `bash /home/<username>/setup.sh &` where username is the current username. `&` allows the script to run in the background. Next, create the file `nano /home/<username>/setup.sh`, and add the following lines:
+To be able to autostart the wifi, edit the file `sudo nano /etc/rc.local` and add `bash
+/home/<username>/setup.sh &` where username is the current username. `&` allows the script
+to run in the background. Next, create the file `nano /home/<username>/setup.sh`, and add
+the following lines:<br/>
 `!#/bin/bash
-nmcli dev wifi hotspot ifname wlan0 ssid <ssid> password "<password>"`. Finally, allow the
-file to be executed with `chmod +x /home/<username>/setup.sh`.
+nmcli dev wifi hotspot ifname wlan0 ssid <ssid> password "<password>"`. <br/>
+Finally, allow the file to be executed with `chmod +x /home/<username>/setup.sh`.
 
-### ROS [USB
-setup](https://askubuntu.com/questions/112568/how-do-i-allow-a-non-default-user-to-use-serial-device-ttyusb0/680328#680328)
-
-`sudo usermod -a -G dialout $USER` allows access to usb serial output with the following
-rule: <br />
+### ROS
+For the [USB serial
+connection](https://askubuntu.com/questions/112568/how-do-i-allow-a-non-default-user-to-use-serial-device-ttyusb0/680328#680328),
+first run the command `sudo usermod -a -G dialout $USER`, which allows access to usb
+serial output with the following rule: <br />
 Open the file (`sudo nano /etc/udev/rules.d/50-myusb.rules`) and add: <br />
 `KERNEL=="ttyUSB[0-9]*",MODE="0666"
 KERNEL=="ttyACM[0-9]*",MODE="0666"
 SUBSYSTEM=="tty",DRIVERS="pl2303",SYMLINK+="tty_robot"
 SUBSYSTEM=="tty",DRIVERS="ch341-uart",SYMLINK+="tty_arduino"`
+
 The SYMLINK lines allow for a system link even if the ttyUSB change after a reboot. Use
 `udevadm info --attribute-walk --path=/dev/ttyUSB*` to get this information from the parent
 class of the device.
@@ -131,9 +147,9 @@ To start ROS, use `roscore &` and `rosrun rosaria RosAria _port:=/dev/ttyUSB0 &`
 could be in a bash script with sleep timers.
 
 ### Streaming video
-First, check the camera with `vcgencmd get_camera`, and then the command `raspistill -o
-file.jpg` to be able to test the camera. To view the image (even over ssh when using `ssh
--x`), use `xdg-open file.jpg`.
+First, check the camera with `vcgencmd get_camera`, and then run the command
+`raspistill -o file.jpg` to be able to test the camera. To view the image (even over ssh
+when using `ssh -X`), use `xdg-open file.jpg`.
 
 The command (on the raspberry pi)
 `raspivid -fps 20 -w 1280 -h 720 -vf -hf -t 0 -o - | nc -l -p 5000`

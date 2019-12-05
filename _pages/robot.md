@@ -56,15 +56,11 @@ The sonar demo shows when objects are detected in the front (red), back (yellow)
 (orange), and no objects (blue) for the operator.
 
 ### Schematic
-<details>
-<summary>Schematic</summary>
 <img class="robot_img"
 src="https://user-images.githubusercontent.com/10273995/66241845-e0b57180-e6b4-11e9-945b-cfb7dfbfe611.png">
-</details>
 
 ## Software Setup
-<details>
-<summary>ROS setup instructions</summary>
+<blockquote style="margin: 0px 10px 0px 10px; background-color:WhiteSmoke;">
 {% capture ros-setup %}{% include ros-instructions.md %}{% endcapture %} {{ ros-setup |
 markdownify }}
-</details>
+</blockquote>
