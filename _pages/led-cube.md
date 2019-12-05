@@ -11,9 +11,11 @@ The major goals for this project would be to create a LED cube using only AVR C 
 shift registers for each output.
 
 ### LED Cube in Action
+
 <p align="center">
-<img src="https://user-images.githubusercontent.com/10273995/66527012-6703f600-eaaf-11e9-91d3-ce5843f21daa.gif"/>
+<img src="https://user-images.githubusercontent.com/10273995/70190448-c98e0280-16aa-11ea-8b65-34edebd8b571.gif"/>
 </p>
+[gif (10 MiB)](https://user-images.githubusercontent.com/10273995/66527012-6703f600-eaaf-11e9-91d3-ce5843f21daa.gif)
 
 ### Hardware
 The hardware used in this project includes an usbasp for programming, an Arduino Nano
