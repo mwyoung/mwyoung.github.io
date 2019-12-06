@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Dotfiles - bash/vim"
-date: 2019-11-03
+date: 2019-12-03
 ---
 Some dotfiles can be found [here](https://github.com/mwyoung/Dotfiles).
 
@@ -19,7 +19,7 @@ last modified folder.
 
 <details>
 <summary>.bash_aliases</summary>
-{% highlight shell%}
+{% highlight shell %}
 {% include .bash_aliases %}
 {% endhighlight %}
 </details>
@@ -46,7 +46,7 @@ suggestions.
 
 <details>
 <summary>.vimrc</summary>
-{% highlight shell%}
+{% highlight shell %}
 {% include .vimrc %}
 {% endhighlight %}
 </details>
@@ -73,7 +73,7 @@ still work.
 
 <details>
 <summary>config</summary>
-{% highlight shell%}
+{% highlight shell %}
 {% include config %}
 {% endhighlight %}
 </details>
@@ -85,7 +85,7 @@ a file, and only copy changed files.
 <details>
 <summary><a href="https://github.com/mwyoung/Dotfiles/blob/master/copy.sh">copy.sh</a>
 </summary>
-{% highlight shell%}
+{% highlight shell %}
 {% include copy.sh %}
 {% endhighlight %}
 <details>

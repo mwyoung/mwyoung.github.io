@@ -7,10 +7,11 @@ search: exclude
     <url>
         <loc>{{ site.url }}</loc>
     </url>
-    {% for page in site.pages %}
+    {% for page in site.pages reversed %}
         {% unless page.exclude %}
             <url>
                 <loc>{{ site.url }}{{ page.url }}</loc>
+                <lastmod>{{ page.date | date: "%Y-%m-%d" }}</lastmod>
             </url>
         {% endunless %}
     {% endfor %}

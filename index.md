@@ -16,3 +16,6 @@ Setup](https://github.com/mwyoung/avr-serial-test) for programming (Microchip's,
 Atmel) AVR ATmega328p microcontrollers, a [PCB
 Ruler](https://github.com/mwyoung/Adafruit-PCB-Ruler) for having a physical representation
 for parts, and a [LED Cube](https://github.com/mwyoung/LED-Cube).
+
+If there is wrong or missing information, please [create a new
+issue](https://github.com/mwyoung/mwyoung.github.io/issues/new) so it can be fixed.
