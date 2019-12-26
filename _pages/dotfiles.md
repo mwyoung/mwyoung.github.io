@@ -132,15 +132,5 @@ use is to zip/tar files with a command (for uploading files). If using
 an example could be `tar -u -v -f file.tar files...` where `-u` is `--update`, `-v` is
 `--verbose`, and `-f` is `--file`.
 
-### a2ps
-[a2ps](https://linux.die.net/man/1/a2ps) is a program to print files (like code) to
-postscript or pdf along with having nice formatting. Some
-[options](http://web.engr.oregonstate.edu/~traylor/ece473/beamer_lectures/a2ps.pdf) that
-are nice to have include `-P pdf` for printing to pdf (or `--printer=`),
-`--file-align=virtual` so there are no blank spots on pages, `--medium=Letter` to change
-from the default page size, `--header=` or `--left-footer="text"` to change the headers
-(with [meta sequences](http://theochem.ki.ku.dk/on_line_docs/a2ps/a2ps_3.html) like %E for
-date in local format), and `-T 4` (or --tabsize) for 4 spaces per tab.
-
-An overall command could then be `a2ps -P pdf <files> --file-align=virtual --medium=Letter
---header= --left-footer="Name - %E" -T 4`.
+More program hints can be found in [Linux Troubleshooting]({% link
+_pages/linux-troubleshooting.md %})

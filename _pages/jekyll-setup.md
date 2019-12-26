@@ -34,10 +34,12 @@ debug or mobile mode (using `make`, `make build-debug`, or `make build-mobile`).
 ### Pages
 This jekyll setup uses a collection titled pages so that there is the advantages of only
 having a folder with titles as file names, and in each file having a date that can be
-changed in order to sort each page. Therefore, this allows the usage of post-like content
-while using pages and allows it to be sortable by date updated in [pages]({{ '/pages/' |
-relative_url }}). This allows no year, month, or day to be shown in the url or file, and
-allows the date to easily be changed.
+changed in order to sort each page.
+
+Therefore, this allows the usage of post-like content while using pages and allows it to
+be sortable by date updated in [pages]({{ '/pages/' | relative_url }}). This allows no
+year, month, or day to be shown in the url or file, and allows the date to easily be
+changed.
 
 ### Including code
 Using markdown and a `_includes/` folder allows the use of embedding code from a file that
