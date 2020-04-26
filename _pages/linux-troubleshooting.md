@@ -55,9 +55,9 @@ method is to reconnect the device, along with reset some of the xinput settings 
 necessary.
 
 <details>
-<summary>mouse_activate.sh</summary>
+<summary>touchpad.sh</summary>
 {% highlight shell %}
-{% include mouse_activate.sh %}
+{% include touchpad.sh %}
 {% endhighlight %}
 </details>
 <h6>&nbsp;</h6>

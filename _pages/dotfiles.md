@@ -83,10 +83,10 @@ still work.
 When syncing between two machines, rsync can be nice as it can include/exclude files from
 a file, and only copy changed files.
 <details>
-<summary><a href="https://github.com/mwyoung/Dotfiles/blob/master/copy.sh">copy.sh</a>
+<summary><a href="https://github.com/mwyoung/Dotfiles/blob/master/copy.sh">copy.sh (example)</a>
 </summary>
 {% highlight shell %}
-{% include copy.sh %}
+{% include copy_files.sh %}
 {% endhighlight %}
 <details>
 <summary>include/exclude</summary>
