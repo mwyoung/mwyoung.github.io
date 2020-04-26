@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Improving Scanned Notes"
+title: "Deskewing Scanned Notes"
 date: 2019-12-23
 ---
 
