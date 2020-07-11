@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Jekyll Setup"
-date: 2019-12-01
+date: 2020-06-01
 ---
 ## Overall Setup
 This Jekyll setup used several guides, including
@@ -20,9 +20,11 @@ folder.
 ```shell
 {% include .gemrc %}
 ```
-The only gem needed for jekyll is `github-pages`, which can be installed with `gem install
-github-pages`. Updates can be checked with `gem outdated` and updated with `gem update
-github-pages`. System updates may be necessary with `sudo gem update --system`.
+The only gem needed for jekyll is `github-pages`, which can be installed with
+ `gem install github-pages`. Updates can be checked with `gem outdated` and updated with
+`gem update github-pages`. System updates may be necessary with
+ `sudo gem update --system`. If the .gemrc file doesn't work, include the switch
+`--user-install` with the update command.
 
 Ruby should also be updated with `gem update`. If one gem fails to install (an error could
 be *failed to build gem native extension*), this then could be solved by manually
@@ -143,6 +145,10 @@ just have a reversed keyword in it.
 {% endhighlight %}
 </details>
 <h6>&nbsp;</h6>
+
+### Javascript and Tracking
+This website doesn't use javascript (but does use some newish HTML5 features). It also
+includes no tracking for the privacy aware.
 
 ### 404
 A good 404 page build guide is available in the [jekyll docs](https://jekyllrb.com/tutorials/custom-404-page/).

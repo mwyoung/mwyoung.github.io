@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Linux Troubleshooting"
-date: 2019-12-17
+date: 2020-06-30
 ---
 <!-- file:///home/miles/Documents/Scripts/usefulCMDs -->
 This page contains troubleshooting tips that have been used on a Linux based system
@@ -82,6 +82,19 @@ shows how long each service took to startup. `systemd-analyze critical-chain` sh
 chain of calling services, along with which ones delayed the following service. Finally,
 `systemd-analyze plot > plot.svg` plots all of the services onto a time graph.
 
+### Grub
+Grub is the default way Ubuntu and other Linux distributions use in order to start Linux,
+Windows, or other OSes. Some of the configuration settings that can be used include
+`GRUB_DEFAULT=saved` and `GRUB_SAVEDEFAULT=true` which saves the last entry (nice when
+updating windows), `GRUB_TIMEOUT=1` for quick booting, and `GRUB_CMDLINE_LINUX_DEFAULT=""`
+to view boot messages instead of the normal graphical view.
+
+On Ubuntu 20.04 there is an issue when using Grub and Secure boot where sometimes the grub
+menu can be hidden (for example only showing the vender logo like Lenovo). To fix this
+issue [uncomment the graphical
+terminal](https://medium.com/@leijerry888/get-grub-menu-back-after-installing-ubuntu-20-04-alongside-windows-dab5de5afc37)
+`GRUB_TERMIANL=console`.
+
 ### Applications
 
 #### Wireshark
@@ -103,7 +116,6 @@ sudo dpkg-reconfigure wireshark-common
 sudo chmod -x /usr/bin/dumpcap
 {% endhighlight %}
 </details>
-
 
 #### a2ps
 [a2ps](https://linux.die.net/man/1/a2ps) is a program to print files (like code) to
