@@ -51,9 +51,10 @@ certificate](https://github.com/mwyoung/Weather-Station/tree/master/tests/BearSS
 (and includes timing analysis). Code to remove the SPIFFS file is located [on
 Github](https://github.com/mwyoung/SPIFFS_Remove_All).
 
-### Darksky API
+### v1 - Darksky API
 This project uses the [dark sky api](https://darksky.net/dev) as it allows up to 1000 free
-api calls per day. With the current api data savings, the project uses 50 calls when
+api calls per day (note - this service is shutting down in 2020 due to Apple's purchase of
+Darksky). With the current api data savings, the project uses 50 calls when
 usually inactive and 100 if being constantly updated.
 
 The current settings include updating with motion more often than when off. However, it is
@@ -66,6 +67,11 @@ attacks. This addition adds about 300 ms to the HTTPS GET call, in addition to t
 seconds it took for the call without the certificate check. This was calculated with the
 [BearSSL_Weather](https://github.com/mwyoung/Weather-Station/tree/master/tests/BearSSL_Weather)
 test.
+
+### v2 - OpenWeatherMap
+This project now uses [OpenWeatherMap's api](https://openweathermap.org/api), as it also
+allows up to 1000 free api calls per day. The project uses the same number of calls, and
+was modified to use OWM instead of creating the structure from scratch.
 
 ### Weather Icons
 The icons used are from [erikflowers's
