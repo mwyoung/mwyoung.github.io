@@ -52,7 +52,7 @@ suggestions.
 </details>
 <h6>&nbsp;</h6>
 
-Other helpful guides include [sheerun](https://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/) and others.
+Other helpful guides include [sheerun's](https://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/) and others.
 
 ### i3 WM
 i3 windows manager is a tiling windows manager, where most of the actions are controlled
@@ -106,6 +106,17 @@ a file, and only copy changed files.
 Git is a pretty good source control manager, and can be used locally (without GitHub) if
 necessary. It is also suggested if using vim to use vim-fugitive to display the current
 branch.
+
+Git/Github/Gitlab and others in the software community are now suggesting changing
+the default name of repositories to 'main'. For GitHub, follow the directions
+[here](https://github.com/github/renaming) and below (after it is renamed):
+```
+git branch -m master main
+git fetch origin
+git branch -u origin/main main
+git remote set-head origin -a      (optional)
+```
+<h6>&nbsp;</h6>
 
 ### Makefiles
 [Makefiles](https://www.gnu.org/software/make/manual/html_node/Introduction.html) are

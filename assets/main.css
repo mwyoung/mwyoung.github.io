@@ -60,7 +60,7 @@ nav ul{
     padding: 0px;
     margin: 0px;
     overflow: hidden;
-    background-color: gray;
+    background-color: DarkBlue;
 }
 nav ul li{
     float: left;
@@ -74,7 +74,7 @@ nav ul li a{
     text-decoration: none;
 }
 nav ul li a:hover {
-    background-color: black;
+    background-color: DarkSlateGray;
 }
 
 /* footer coloring */
