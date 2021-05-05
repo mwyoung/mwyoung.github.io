@@ -114,7 +114,7 @@ the default name of repositories to 'main'. For GitHub, follow the directions
 git branch -m master main
 git fetch origin
 git branch -u origin/main main
-git remote set-head origin -a      (optional)
+git remote set-head origin -a         (optional)
 ```
 <h6>&nbsp;</h6>
 
